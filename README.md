@@ -10,6 +10,8 @@ These sketches are part of the course ["Eingabe, Ausgabe. Grundlagen der prozess
 ![pushbutton/fritzing-layout.png](pushbutton/fritzing-layout.png)  
 ##tiltswitch
 ![tiltswitch/fritzing-layout.png](tiltswitch/fritzing-layout.png)  
+##Seven Segment Display
+![](SevenSegmentDisplay/fritzing-layout.png)  
 ##infrared simple  
 ![infrared/simpleinfrared/fritzing-layout.png](infrared/simpleinfrared/fritzing-layout.png)  
 ##IC_4017B_Graph
