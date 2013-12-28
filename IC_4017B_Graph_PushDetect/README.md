@@ -2,15 +2,6 @@ DIGITALIO_4017B_Graph
 =====================
 
 
-Needs to be updated to fill the graph using this:  
-
-http://arduino.cc/en/Tutorial/ButtonStateChange
-
-and this
-
-http://codentronix.com/2011/06/05/arduino-led-bar-graph-with-a-4017-counter-and-potentiometer/
-
-
 This little sketch shows the usage of the CD4017B Decade counter by controlling a LED Bar with a pushbutton
 The 4017 is used to save pins on the arduino.
 written by Fabian Morón Zirfas  

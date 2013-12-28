@@ -5,6 +5,7 @@
  * based on work by Leonel Machava
  * http://codentronix.com
  * http://codentronix.com/2011/06/05/arduino-led-bar-graph-driven-by-a-4017-counter/
+ * http://codentronix.com/2011/06/05/arduino-led-bar-graph-with-a-4017-counter-and-potentiometer/
  * This code is release under the "MIT License" available at
  * http://www.opensource.org/licenses/mit-license.php
  *
@@ -14,6 +15,9 @@
  * by DojoDave <http://www.0j0.org>
  * modified 30 Aug 2011
  * by Tom Igoe
+ * and the ButtonStageChange tutorial
+ *  also by Tom Igoe
+ * http://arduino.cc/en/Tutorial/ButtonStateChange
  *
  * CD4017B Datasheet
  * http://www.ti.com/lit/ds/symlink/cd4017b.pdf
@@ -41,26 +45,65 @@ int clockPin = 2; // this pulses the clock
 int buttonPin = 8; // this is for the pushbutton
 int buttonState = 0;// variable for reading the pushbutton status
 int counter = 0;
-boolean waspressed = false;
+int lastButtonState = 0;
+int resetpin = 3;
+
 void setup() {
+Serial.begin(9600);
   pinMode(clockPin,OUTPUT);
   pinMode(buttonPin, INPUT);
+  pinMode(resetpin, OUTPUT);
+  reset();
 }
 
 void loop() {
   /**
   * Read the state of the button
   */
+  int barvalue = counter % 10;
+  for(int i = 0; i < barvalue;i++){
+    clock();
+  }
+  reset();
+  
   buttonState = digitalRead(buttonPin);
+  
+  if(buttonState != lastButtonState){
   // check if the pushbutton is pressed.
   // if it is, the buttonState is HIGH:
-  if (buttonState == HIGH) {     
-  digitalWrite(clockPin,LOW);
-  } 
-  else {
-   // button is pressed
-  digitalWrite(clockPin,HIGH);
+    if (buttonState == HIGH) {     
+
+      digitalWrite(clockPin,HIGH);
+      counter++;
+      Serial.println("on");
+      Serial.print("number of button pushes:  ");
+      Serial.println(counter);
+
+    } else {
+     // button is not pressed
+      Serial.println("off");     
+    digitalWrite(clockPin,LOW);
+    }
   }
+  lastButtonState = buttonState;
 }
 
+/*
+ * Sends a clock pulse to the counter making it advance.
+ */
+void clock() {
+  digitalWrite(clockPin,HIGH);
+  delay(1);
+  digitalWrite(clockPin,LOW);
+}
+ 
+ 
+/*
+ * Resets the counter making it start counting from zero.
+ */
+void reset() {
+  digitalWrite(resetpin,HIGH);
+  delay(1);
+  digitalWrite(resetpin,LOW);
+}
 

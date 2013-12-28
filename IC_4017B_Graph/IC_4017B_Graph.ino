@@ -54,11 +54,11 @@ void loop() {
   // check if the pushbutton is pressed.
   // if it is, the buttonState is HIGH:
   if (buttonState == HIGH) {     
-  digitalWrite(clockPin,LOW);
+  digitalWrite(clockPin,HIGH);
   } 
   else {
    // button is pressed
-  digitalWrite(clockPin,HIGH);
+  digitalWrite(clockPin,LOW);
   }
 }
 
