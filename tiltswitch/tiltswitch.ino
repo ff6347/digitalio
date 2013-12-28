@@ -1,19 +1,19 @@
 /**
- * Simple push button sketch.
+ * Simple tilt switch sketch.
  * Turns a LED on pin 13 on and off
  *
  */
 int ledpin = 13; // for output
-int pushpin = 2; // pushbutton input
+int tiltpin = 2; // tiltswitch in put
 int is_on = 0;// boolean
 
 void setup(){
 pinMode(ledpin, OUTPUT); // init
-pinMode(pushpin, INPUT); // inti
+pinMode(tiltpin, INPUT); // inti
   
 }
 void loop(){
-  is_on = digitalRead(pinpin); // read from the button
+  is_on = digitalRead(tiltpin); // read from the switch
 
   if(is_on){
   digitalWrite(ledpin,HIGH); // on
