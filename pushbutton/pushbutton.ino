@@ -13,7 +13,7 @@ pinMode(pushpin, INPUT); // inti
   
 }
 void loop(){
-  is_on = digitalRead(pinpin); // read from the button
+  is_on = digitalRead(pushpin); // read from the button
 
   if(is_on){
   digitalWrite(ledpin,HIGH); // on
