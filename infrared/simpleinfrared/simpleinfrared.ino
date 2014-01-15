@@ -6,8 +6,8 @@
  *
  *
  */
- int ledpin = 3; // this is just for reference 
- int irsensorpin = 2; // read digital
+ int ledpin = 13; // this is just for reference 
+ int irsensorpin = 3; // read digital
   
  void setup(){
  Serial.begin(9600);// for seeing whats going on
