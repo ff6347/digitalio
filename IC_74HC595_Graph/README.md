@@ -3,7 +3,7 @@ DIGITALIO_74HC595_Graph
 
 Controlling a [LED Bargraph](https://www.sparkfun.com/products/9937) with a [74HC595 Shiftregister](https://www.sparkfun.com/datasheets/IC/SN74HC595.pdf)
 
-![DIGITALIO_74HC595_Graph_layout](IC_74HC595_Graph_layout.png)  
+![DIGITALIO_74HC595_Graph_layout](fritzing-layout.png)  
 written by Fabian Morón Zirfas  
 based on  
 
