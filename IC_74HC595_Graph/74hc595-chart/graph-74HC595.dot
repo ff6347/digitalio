@@ -1,0 +1,91 @@
+digraph {
+
+ node [shape=box];
+  edge [arrowhead = "halfopen", arrowsize=.5, color = black];
+    rankdir = LR; // Tells dot to draw the graph left-to-right
+Arduino -> "Shift Register 01" [label="latch pin"];
+Arduino -> "Shift Register 01"[label="clock pin"];
+Arduino -> "Shift Register 01"[label="data pin"];
+"Shift Register 01"  -> "Shift Register 02" [label="Serial output"];
+"Shift Register 02" -> "Shift Register 03"[label="Serial output"];
+
+"Shift Register 01" -> "Shift Register 01 Output Pin 01";
+"Shift Register 01" -> "Shift Register 01 Output Pin 02";
+"Shift Register 01" -> "Shift Register 01 Output Pin 03";
+"Shift Register 01" -> "Shift Register 01 Output Pin 04";
+"Shift Register 01" -> "Shift Register 01 Output Pin 05";
+"Shift Register 01" -> "Shift Register 01 Output Pin 06";
+"Shift Register 01" -> "Shift Register 01 Output Pin 07";
+"Shift Register 01" -> "Shift Register 01 Output Pin 08";
+
+"Shift Register 02" -> "Shift Register 02 Output Pin 01";
+"Shift Register 02" -> "Shift Register 02 Output Pin 02";
+"Shift Register 02" -> "Shift Register 02 Output Pin 03";
+"Shift Register 02" -> "Shift Register 02 Output Pin 04";
+"Shift Register 02" -> "Shift Register 02 Output Pin 05";
+"Shift Register 02" -> "Shift Register 02 Output Pin 06";
+"Shift Register 02" -> "Shift Register 02 Output Pin 07";
+"Shift Register 02" -> "Shift Register 02 Output Pin 08";
+
+"Shift Register 03" -> "Shift Register 03 Output Pin 01";
+"Shift Register 03" -> "Shift Register 03 Output Pin 02";
+"Shift Register 03" -> "Shift Register 03 Output Pin 03";
+"Shift Register 03" -> "Shift Register 03 Output Pin 04";
+"Shift Register 03" -> "Shift Register 03 Output Pin 05";
+"Shift Register 03" -> "Shift Register 03 Output Pin 06";
+"Shift Register 03" -> "Shift Register 03 Output Pin 07";
+"Shift Register 03" -> "Shift Register 03 Output Pin 08";
+
+"Shift Register 01 Output Pin 01" -> "LED 01";
+"Shift Register 01 Output Pin 02" -> "LED 02";
+"Shift Register 01 Output Pin 03" -> "LED 03";
+"Shift Register 01 Output Pin 04" -> "LED 04";
+"Shift Register 01 Output Pin 05" -> "LED 05";
+"Shift Register 01 Output Pin 06" -> "LED 06";
+"Shift Register 01 Output Pin 07" -> "LED 07";
+"Shift Register 01 Output Pin 08" -> "LED 08";
+
+"Shift Register 02 Output Pin 01" -> "LED 09";
+"Shift Register 02 Output Pin 02" -> "LED 10";
+"Shift Register 02 Output Pin 03" -> "LED 11";
+"Shift Register 02 Output Pin 04" -> "LED 12";
+"Shift Register 02 Output Pin 05" -> "LED 13";
+"Shift Register 02 Output Pin 06" -> "LED 14";
+"Shift Register 02 Output Pin 07" -> "LED 15";
+"Shift Register 02 Output Pin 08" -> "LED 16";
+
+"Shift Register 03 Output Pin 01" -> "LED 17";
+"Shift Register 03 Output Pin 02" -> "LED 18";
+"Shift Register 03 Output Pin 03" -> "LED 19";
+"Shift Register 03 Output Pin 04" -> "LED 20";
+"Shift Register 03 Output Pin 05" -> "LED 21";
+"Shift Register 03 Output Pin 06" -> "LED 22";
+"Shift Register 03 Output Pin 07" -> "LED 23";
+"Shift Register 03 Output Pin 08" -> "LED 24";
+//"GND" -> Arduino;
+//"LED 01" -> "GND";
+//"LED 02" -> "GND";
+//"LED 03" -> "GND";
+//"LED 04" -> "GND";
+//"LED 05" -> "GND";
+//"LED 06" -> "GND";
+//"LED 07" -> "GND";
+//"LED 08" -> "GND";
+//"LED 09" -> "GND";
+//"LED 10" -> "GND";
+//"LED 11" -> "GND";
+//"LED 12" -> "GND";
+//"LED 13" -> "GND";
+//"LED 14" -> "GND";
+//"LED 15" -> "GND";
+//"LED 16" -> "GND";
+//"LED 17" -> "GND";
+//"LED 18" -> "GND";
+//"LED 19" -> "GND";
+//"LED 20" -> "GND";
+//"LED 21" -> "GND";
+//"LED 22" -> "GND";
+//"LED 23" -> "GND";
+//"LED 24" -> "GND";
+
+}
