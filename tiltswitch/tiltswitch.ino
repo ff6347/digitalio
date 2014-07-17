@@ -3,7 +3,7 @@
  * Turns a LED on pin 13 on and off
  *
  */
-int ledpin = 13; // for output
+int ledpin = 12; // for output
 int tiltpin = 2; // tiltswitch in put
 int is_on = 0;// boolean
 
