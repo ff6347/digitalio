@@ -29,6 +29,7 @@ def setup():
 
 def loop():
     """loop until user interrupts"""
+    print "Starting loop"
     while True:
         time.sleep(0.5)
         GPIO.output(PIN, GPIO.HIGH)
@@ -41,8 +42,8 @@ if __name__ == '__main__':
         setup()
         loop()
     except KeyboardInterrupt:
-        print "\nbye bye"
         GPIO.cleanup()
+        print "\nbye bye"
     finally:
-        print "\nbye bye"
         GPIO.cleanup()
+        print "\nbye bye"
