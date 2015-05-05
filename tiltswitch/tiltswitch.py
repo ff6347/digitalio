@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""This script blinks a LED until the user aborts"""
+"""This script reads a tiltswitch until the user aborts"""
 
 import sys # we need this to exit if the GPIO lib is not present
 import time # for timing
@@ -22,19 +22,17 @@ def setup():
     """Setup all that stuff"""
     print "setup GPIO"
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(PIN, GPIO.OUT)
-    # pull them all low
-    GPIO.output(PIN, GPIO.LOW)
+    GPIO.setup(PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     print "setup GPIO done"
 
 def loop():
     """loop until user interrupts"""
     print "Starting loop"
     while True:
-        time.sleep(0.5)
-        GPIO.output(PIN, GPIO.HIGH)
-        time.sleep(0.5)
-        GPIO.output(PIN, GPIO.LOW)
+        input_state = GPIO.input(PIN)
+        if input_state == False:
+            print "Tiltswitch is tilted"
+            time.sleep(0.2)
 
 # now run all of that
 if __name__ == '__main__':
