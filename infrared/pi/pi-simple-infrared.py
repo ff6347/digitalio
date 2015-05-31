@@ -40,13 +40,16 @@ if __name__ == '__main__':
             if TOGGLE == False:
                 GPIO.output(OUTPIN, GPIO.HIGH)
                 time.sleep(0.05)
-            input_state = GPIO.input(INPIN)
-            print input_state
+                TOGGLE = True
+            else:
+                input_state = GPIO.input(INPIN)
+                print input_state
             if input_state == True:
                 print "Messsage received"
                 time.sleep(0.05)
                 GPIO.output(OUTPIN, GPIO.LOW)
                 time.sleep(0.05)
+                TOGGLE = False
             # else:
                 # print "Button is not pressed"
                 # time.sleep(0.2)
