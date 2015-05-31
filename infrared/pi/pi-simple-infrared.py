@@ -35,8 +35,8 @@ def setup():
 if __name__ == '__main__':
     try:
         setup()
+        input_state = 0
         while True:
-
             if TOGGLE == False:
                 GPIO.output(OUTPIN, GPIO.HIGH)
                 time.sleep(0.05)
