@@ -24,7 +24,7 @@
     * if not it is 1
     */
    if(recieved == 0){
-     digitalWrite(ledpin, HIGH);// torn the LED on
+     digitalWrite(ledpin, HIGH);// turn the LED on
      Serial.println("Message recieved");
    }else{
      digitalWrite(ledpin, LOW);// turn the LED off
