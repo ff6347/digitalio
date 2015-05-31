@@ -7,7 +7,9 @@ Taken from http://razzpisampler.oreilly.com/ch07.html
 import sys # we need this to exit if the GPIO lib is not present
 import time # for timing
 
-PIN = 12
+INPIN = 12
+OUTPIN = 11
+TOGGLE = False
 
 # Check if the GPIO lib exist on this system
 try:
@@ -25,7 +27,8 @@ def setup():
     """Setup all that stuff"""
     print "setup GPIO"
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(PIN, GPIO.IN)
+    GPIO.setup(INPIN, GPIO.IN)
+    GPIO.setup(OUTPIN, GPIO.OUT)
     print "setup GPIO done"
 
 # now run all of that
@@ -33,10 +36,17 @@ if __name__ == '__main__':
     try:
         setup()
         while True:
-            input_state = GPIO.input(PIN)
+
+            if TOGGLE == False:
+                GPIO.output(OUTPIN, GPIO.HIGH)
+                time.sleep(0.05)
+            input_state = GPIO.input(INPIN)
+            print input_state
             if input_state == True:
                 print "Messsage received"
-                time.sleep(0.2)
+                time.sleep(0.05)
+                GPIO.output(OUTPIN, GPIO.LOW)
+                time.sleep(0.05)
             # else:
                 # print "Button is not pressed"
                 # time.sleep(0.2)
