@@ -7,7 +7,7 @@ Taken from http://razzpisampler.oreilly.com/ch07.html
 import sys # we need this to exit if the GPIO lib is not present
 import time # for timing
 
-PIN = 12
+PIN = 21
 
 # Check if the GPIO lib exist on this system
 try:
@@ -25,7 +25,7 @@ def setup():
     """Setup all that stuff"""
     print "setup GPIO"
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(PIN, GPIO.IN)
+    GPIO.setup(PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     print "setup GPIO done"
 
 # now run all of that
@@ -36,7 +36,7 @@ if __name__ == '__main__':
             input_state = GPIO.input(PIN)
             if input_state == False:
                 print "Button is pressed"
-                # time.sleep(0.2)
+                time.sleep(0.2)
 
     except KeyboardInterrupt:
         print "\nbye bye"
