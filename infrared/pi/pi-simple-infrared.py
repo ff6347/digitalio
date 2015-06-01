@@ -8,8 +8,7 @@ import sys # we need this to exit if the GPIO lib is not present
 import time # for timing
 
 INPIN = 12
-OUTPIN = 11
-TOGGLE = False
+MSGCOUNTER = 0
 
 # Check if the GPIO lib exist on this system
 try:
@@ -27,32 +26,24 @@ def setup():
     """Setup all that stuff"""
     print "setup GPIO"
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(INPIN, GPIO.IN)
-    GPIO.setup(OUTPIN, GPIO.OUT)
+    GPIO.setup(INPIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     print "setup GPIO done"
 
 # now run all of that
 if __name__ == '__main__':
     try:
         setup()
-        input_state = 0
+        print "Did you know that the Facetime camera of an iPhone"
+        print "has no IR filter?"
+        print "(the camera you do selfies with)"
         while True:
-            if TOGGLE == False:
-                GPIO.output(OUTPIN, GPIO.HIGH)
-                time.sleep(0.05)
-                TOGGLE = True
-            else:
-                input_state = GPIO.input(INPIN)
-                print input_state
-            if input_state == True:
-                print "Messsage received"
-                time.sleep(0.05)
-                GPIO.output(OUTPIN, GPIO.LOW)
-                time.sleep(0.05)
-                TOGGLE = False
+            if  GPIO.input(INPIN) == GPIO.LOW:
+                MSGCOUNTER += 1
+                print "Messsage received, No:", MSGCOUNTER
+                # time.sleep(0.05)
             # else:
-                # print "Button is not pressed"
-                # time.sleep(0.2)
+                # print "No messsage"
+                # time.sleep(0.05)
 
     except KeyboardInterrupt:
         print "\nbye bye"

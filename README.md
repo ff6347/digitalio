@@ -3,32 +3,71 @@ digitalio
 
 These sketches are part of the course ["Input Output (Eingabe Ausgabe)Fundamentals of process-oriented design."](https://interface.fh-potsdam.de/eingabe-ausgabe/)  
 
+Most of the examples are build for the Arduino Uno and the Raspberry Pi. Use at your own risk.
 
-##blink
-![blink/fritzing-layout.png](blink/fritzing-layout.png)  
-##pushbutton
-![pushbutton/fritzing-layout.png](pushbutton/fritzing-layout.png)  
-##tiltswitch
-![tiltswitch/fritzing-layout.png](tiltswitch/fritzing-layout.png)  
-##Seven Segment Display
-![](SevenSegmentDisplay/fritzing-layout.png)  
-##infrared simple  
-![infrared/simpleinfrared/fritzing-layout.png](infrared/simpleinfrared/fritzing-layout.png)  
-##IC_4017B_Graph
-![IC_4017B_Graph/fritzing-layout.png](IC_4017B_Graph/fritzing-layout.png)  
-##IC_4017B_Graph_PushDetect
-![IC_4017B_Graph_PushDetect/fritzing-layout.png](IC_4017B_Graph_PushDetect/fritzing-layout.png)  
-##IC_74HC595_Graph
-![IC_74HC595_Graph/fritzing-layout.png](IC_74HC595_Graph/fritzing-layout.png)  
-##Relay  
-![](relay/fritzing-layout.png)  
-##Transistor  
-![](transistor/fritzing-layout.png)  
-##Optocoupler  
-![](optocoupler/fritzing-layout.png)  
+###blink
+
+Simple blink sketches  
+
+###blink_with_serial
+
+Blink and write info to serial  
+
+###tiltswitch
+
+How to use a tiltswitch  
+
+###pushbutton
+
+How to use a pushbutton  
+
+###button_pull_up
+
+How to use internal pull ups and buttons
+
+###transistor
+
+How to use a transistor  
+
+###infrared
+
+How to use infrared  
+
+###optocoupler
+
+How to use an optocoupler
+
+###relay
+
+How to control a relay  
+
+###capacitive_touch_paperclip
+
+How to create a capcitve touch button (arduino only)
+
+###L293D_motor_driver
+
+How to control motors with a H-Bridge  
+
+###IC_74HC595_Graph
+
+Shiftregister an bar graph  
+
+###IC_4017B_Graph
+
+Decade counter and bar graph
+
+###IC_4017B_Graph_PushDetect
+
+Decade counter and bar graph with button  
+
+###SevenSegmentDisplay
+
+Controling a seven segment display  
 
 ##License  
-If not further noted 
+
+All datasheets in this repository are property of their respectfull owner everything else if not further noted:  
 
 This is free and unencumbered software released into the public domain.  
 
