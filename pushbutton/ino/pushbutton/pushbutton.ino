@@ -3,7 +3,7 @@
  * Turns a LED on pin 13 on and off
  *
  */
-int ledpin = 13; // for output
+int ledpin = 12; // for output
 int pushpin = 2; // pushbutton input
 int is_on = 0;// boolean
 
