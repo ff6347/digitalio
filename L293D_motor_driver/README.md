@@ -1,1 +1,0 @@
-This sketch shows how to use a L293D motor driver H-Bridge. Taken from [fritzing](http://fritzing.org/projects/fritzing-creator-kit-09-motor-control-with-an-h-br/) with minor changes to the Arduino code for better understanding by fabiantheblind  
